@@ -1,0 +1,23 @@
+{
+  "name": "星空影视",
+  "short_name": "星空影视",
+  "description": "发现好内容，尽享自由观影",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#050907",
+  "theme_color": "#050907",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

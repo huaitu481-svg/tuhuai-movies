@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050907">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="星空影视">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+<title>星空影视</title>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">✦</span><div><b>星空影视</b><small>发现好内容 · 自由观影</small></div></div>
+  <button class="icon-btn" id="settingsBtn" aria-label="设置">⚙</button>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow">YOUR CINEMA, YOUR UNIVERSE</div>
+    <h1>探索下一部<br><em>心动作品</em></h1>
+    <p>电影、剧集、动漫与纪录片，尽在星空。</p>
+    <div class="hero-actions"><button class="primary" id="exploreBtn">开始探索 <span>→</span></button><span class="free-tag">永久免费 · 游客可用</span></div>
+    <div class="orb orb-one"></div><div class="orb orb-two"></div>
+  </section>
+  <section class="toolbar">
+    <label class="search"><span>⌕</span><input id="searchInput" placeholder="搜索片名 / 原名" autocomplete="off"></label>
+    <button class="filter-btn" id="regionBtn">全部地区⌄</button>
+  </section>
+  <nav class="chips" id="categoryChips">
+    <button class="chip active" data-category="全部">全部</button>
+    <button class="chip" data-category="电影">电影</button>
+    <button class="chip" data-category="电视剧">电视剧</button>
+    <button class="chip" data-category="动漫">动漫</button>
+    <button class="chip" data-category="纪录片">纪录片</button>
+  </nav>
+  <section class="section-head"><div><span class="eyebrow">CURATED FOR YOU</span><h2>为你精选</h2></div><button class="text-btn" id="refreshBtn">刷新片库 ↻</button></section>
+  <div id="status" class="status" hidden></div>
+  <section id="movieGrid" class="movie-grid" aria-live="polite"></section>
+  <section class="install-tip" id="installTip">
+    <div class="tip-icon">＋</div><div><b>把星空影视添加到主屏幕</b><p>在 Safari 中打开本网站，点击分享按钮，再选择「添加到主屏幕」。</p></div>
+    <button id="dismissTip" aria-label="关闭">×</button>
+  </section>
+</main>
+<footer><span>✦ 星空影视</span><span>仅展示合法授权或公版内容</span></footer>
+
+<dialog id="detailDialog" class="detail-dialog">
+  <button class="close-btn" data-close="detailDialog">×</button>
+  <div id="detailContent"></div>
+</dialog>
+<dialog id="settingsDialog" class="settings-dialog">
+  <button class="close-btn" data-close="settingsDialog">×</button>
+  <div class="eyebrow">CONFIGURATION</div><h2>片库设置</h2>
+  <p class="muted">填写你拥有使用权的影视目录 API 地址。系统将请求该地址下的 <code>/catalog</code> 接口。</p>
+  <label class="field-label" for="apiInput">片库 API 基础地址</label>
+  <input id="apiInput" class="field" type="url" placeholder="https://example.com/api">
+  <button class="primary full" id="saveApi">保存并加载</button>
+  <p class="tiny">请仅使用 HTTPS 和版权方授权的海报、播放地址、字幕及音轨。演示内容不是真实影视资源。</p>
+  <hr><h3>我的片单</h3><p id="localStats" class="muted"></p>
+  <button class="secondary full" id="clearApi">清除接口地址</button>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
